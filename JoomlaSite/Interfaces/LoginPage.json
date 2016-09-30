@@ -1,0 +1,17 @@
+﻿[
+  {
+    "name": "UserName_tbx",
+    "type": "Xpath",
+    "value": "//input[@id='mod-login-username']"
+  },
+  {
+    "name": "Password_tbx",
+    "type": "Xpath",
+    "value": "//input[@id='mod-login-password']"
+  },
+  {
+    "name": "Login_btn",
+    "type": "Xpath",
+    "value": "//div[@class='btn-group']/button"
+  }
+]
