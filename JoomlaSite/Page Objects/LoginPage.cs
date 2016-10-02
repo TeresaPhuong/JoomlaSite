@@ -3,34 +3,34 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
+using JoomlaSite.Common;
 
 namespace JoomlaSite.Page_Objects
 {
-    class LoginPage
+    class LoginPage:CommonAC
     {
         public void EnterIntoUsername(string username)
         {
-            WaitToPageLoad(Username_TBX);
-            EnterText(Username_TBX, username);
+            TypeText("username_tbx", username);
         }
 
         public void EnterIntoPassword(string password)
         {
-            EnterText(Password_TBX, password);
+            TypeText("password_tbx", password);
         }
 
-        public HomePageAC ClickLoginBTN()
+        public HomePage ClickLoginButton()
         {
-            ClickElement(Login_BTN);
-            return new HomePageAC();
+            ClickWebElement("login_btn");
+            return new HomePage();
         }
 
-        public HomePageAC Login(string username, string password)
+        public HomePage Login(string username, string password)
         {
             EnterIntoUsername(username);
             EnterIntoPassword(password);
-            ClickLoginBTN();
-            return new HomePageAC();
+            ClickLoginButton();
+            return new HomePage();
         }
     }
 }

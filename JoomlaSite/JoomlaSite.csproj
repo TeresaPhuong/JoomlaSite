@@ -74,7 +74,8 @@
   </Choose>
   <ItemGroup>
     <Compile Include="Common\Browser.cs" />
-    <Compile Include="Common\Common.cs" />
+    <Compile Include="Common\CommonAC.cs" />
+    <Compile Include="Page Objects\HomePage.cs" />
     <Compile Include="Page Objects\LoginPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
   </ItemGroup>
