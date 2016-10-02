@@ -11,9 +11,9 @@ using Newtonsoft.Json;
 using NUnit.Framework;
 using OpenQA.Selenium;
 
-namespace JoomlaSite.Common
+namespace JoomlaSite.Common_Action
 {
-    class Common
+    class Common:Browser
     {
         #region Read Json file
         private static string GetClassCaller(int level = 4)
@@ -73,6 +73,37 @@ namespace JoomlaSite.Common
             }
             return null;
         }
-    #endregion
-}
+        #endregion
+        #region Basic Actions
+        public IWebElement FindWebElement(string element)
+        {
+            string[] control = GetControlValue(element);
+            return driver.FindElement(By.XPath(control[1]));
+        }
+
+        public void ClickWebElement(string element)
+        {
+            FindWebElement(element).Click();
+        }
+
+        public void TypeText(string element, string text)
+        {
+            FindWebElement(element).Clear();
+            FindWebElement(element).SendKeys(text);
+        }
+
+        public void SelectDropdownList(string element,string field,string selectvalue)
+        {
+            FindWebElement(element).Click();
+            string[] control = GetControlValue(field + "value");
+            string value = string.Format(control[1], selectvalue);
+            FindWebElement(selectvalue).Click();
+        }
+
+        public void WaitToPageLoad(string ElementToCheck)
+        {
+            //new WebDriverWait(driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementExists((By.XPath(ElementToCheck))));
+        }
+        #endregion
+    }
 }

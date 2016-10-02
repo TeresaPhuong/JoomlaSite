@@ -7,7 +7,7 @@ using System.Xml;
 using JoomlaSite;
 using OpenQA.Selenium;
 
-namespace JoomlaSite.Common
+namespace JoomlaSite.Common_Action
 {
     public class Browser
     {
