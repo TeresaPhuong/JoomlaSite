@@ -1,0 +1,12 @@
+﻿[
+  {
+    "name": "newarticle_btn",
+    "type": "Xpath",
+    "value": "//*[@id='content']//a[span[contains(text(),'New Article')]]"
+  },
+  {
+    "name": "articles_btn",
+    "type": "Xpath",
+    "value": "//*[@id='content']//a[span[contains(text(),'Articles')]]"
+  }
+]

@@ -1,0 +1,134 @@
+﻿[
+  //Menu Buttons
+  [
+    {
+      "name": "new_btn",
+      "type": "xpath",
+      "value": "//div[@id='toolbar-new']/button"
+    },
+    {
+      "name": "edit_btn",
+      "type": "xpath",
+      "value":
+    },
+    {
+      "name": "trash_btn",
+      "type": "xpath",
+      "value": "//*[@id='toolbar-trash']/button"
+    },
+    {
+      "name": "emptytrash_btn",
+      "type": "xpath",
+      "value": "//div[@id='toolbar-delete']/button"
+    }
+  ],
+  //search_fucntion
+  [
+    {
+      "name": "search_btn",
+      "type": "xpath",
+      "value": "//*[@id='j-main-container']//div[input[@id='filter_search']]/button"
+    },
+    {
+      "name": "searchtools_btn",
+      "type": "xpath",
+      "value": "//button[@class='btn hasTooltip js-stools-btn-filter btn-primary']"
+    },
+    {
+      "name": "searchstatus_btn",
+      "type": "xpath",
+      "value": "//*[@id='filter_published_chzn']/a"
+    },
+    {
+      "name": "searchcategory_btn",
+      "type": "xpath",
+      "value": "//*[@id='filter_category_id_chzn']/a"
+    },
+    {
+      "name": "searchaccess_btn",
+      "type": "xpath",
+      "value": "//*[@id='filter_access_chzn']/a"
+    },
+    {
+      "name": "searchlanguage_btn",
+      "type": "xpath",
+      "value": "//*[@id='filter_language_chzn']/a"
+    },
+    {
+      "name": "searchtag_btn",
+      "type": "xpath",
+      "value": "//*[@id='filter_tag_chzn']/a"
+    },
+    {
+      "name": "searchauthor_btn",
+      "type": "xpath",
+      "value": "//*[@id='filter_author_id_chzn']/a"
+    },
+    {
+      "name": "searchmaxlevel_btn",
+      "type": "xpath",
+      "value": "//*[@id='filter_level_chzn']/a"
+    },
+    {
+      "name": "statusvalue",
+      "type": "xpath",
+      "value": "//*[@id='filter_published_chzn']/div/ul/li[contains(text(),'{0}')]"
+    },
+    {
+      "name": "categoryvalue",
+      "type": "xpath",
+      "value": "//*[@id='filter_category_id_chzn']//li[contains(text(),'{0}')]"
+    },
+    {
+      "name": "accessvalue",
+      "type": "xpath",
+      "value": "//div[@id='filter_access_chzn']//li[contains(text(),'{0}')]"
+    },
+    {
+      "name": "languagevalue",
+      "type": "xpath",
+      "value": "//div[@id='filter_language_chzn']//li[contains(text(),'English')]"
+    },
+    {
+      "name": "tagvalue",
+      "type": "xpath",
+      "value": "//div[@id='filter_tag_chzn']//li[contains(text(),'{0}')]"
+    },
+    {
+      "name": "authorvalue",
+      "type": "xpath",
+      "value": "//div[@id='filter_author_id_chzn']//li[contains(text(),'{0}')]"
+    },
+    {
+      "name": "maxlevelvalue",
+      "type": "xpath",
+      "value": "//div[@id='filter_level_chzn']//li[contains(text(),'{0}')]"
+    }
+  ],
+  //object to check
+  [
+    {
+      "name": "message",
+      "type": "xpath",
+      "value": "//div[@class='alert-message']"
+    },
+    {
+      "name": "titletocheck",
+      "type": "xpath",
+      "value": "//a[contains(text(),'{0}')]"
+    }
+  ],
+  //text box and check box
+  [
+    {
+      "name": "search_tbx",
+      "type": "xpath",
+      "value": "//*[@id='filter_search']"
+    },
+    {
+      "name": "checkall_cbx",
+      "type": "xpath",
+      "value": "//*[@id='articleList']//th[@class='center']/input"
+    }
+  ]
+]

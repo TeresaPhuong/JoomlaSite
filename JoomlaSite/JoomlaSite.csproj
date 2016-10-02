@@ -81,6 +81,8 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
+    <None Include="Interfaces\AddNewArticlePage.json" />
+    <None Include="Interfaces\HomePage.json" />
     <None Include="Interfaces\LoginPage.json" />
     <None Include="packages.config" />
   </ItemGroup>
