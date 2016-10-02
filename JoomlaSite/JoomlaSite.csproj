@@ -73,8 +73,8 @@
     </Otherwise>
   </Choose>
   <ItemGroup>
-    <Compile Include="Common\Browser.cs" />
-    <Compile Include="Common\CommonAC.cs" />
+    <Compile Include="Common Action\Browser.cs" />
+    <Compile Include="Common Action\Common.cs" />
     <Compile Include="Page Objects\HomePage.cs" />
     <Compile Include="Page Objects\LoginPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />

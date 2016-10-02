@@ -3,11 +3,11 @@ using System.Collections.Generic;
 using System.Linq;
 using System.Text;
 using System.Threading.Tasks;
-using JoomlaSite.Common;
+using JoomlaSite.Common_Action;
 
 namespace JoomlaSite.Page_Objects
 {
-    class LoginPage:CommonAC
+    class LoginPage:Common
     {
         public void EnterIntoUsername(string username)
         {
