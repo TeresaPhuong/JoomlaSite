@@ -1,0 +1,5 @@
+﻿{
+  "name": "browser",
+  "type": "string",
+  "value": "chrome"
+}

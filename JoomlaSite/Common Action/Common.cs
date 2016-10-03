@@ -10,11 +10,13 @@ using System.IO;
 using Newtonsoft.Json;
 using NUnit.Framework;
 using OpenQA.Selenium;
+using OpenQA.Selenium.Support.UI;
 
 namespace JoomlaSite.Common_Action
 {
-    class Common:Browser
+    class Common
     {
+        public static IWebDriver driver;
         #region Read Json file
         private static string GetClassCaller(int level = 4)
         {
@@ -35,30 +37,30 @@ namespace JoomlaSite.Common_Action
             string page = GetClassCaller();
             string path = Directory.GetParent(System.Reflection.Assembly.GetExecutingAssembly().Location).FullName;
             path = path.Replace("\\bin\\Debug", "");
-            string content = string.Empty;
-            switch (page)
-            {
-                case "LoginPage":
-                    content = File.ReadAllText(path + @"\Interfaces\LoginPage.json");
-                    break;
-                case "GeneralPage":
-                case "NewPageDialog":
-                case "EditPageDialog":
-                case "PanelConfigurationDialog":
-                    content = File.ReadAllText(path + @"\Interfaces\GeneralPage\" + page + ".json");
-                    break;
-                case "PanelsPage":
-                case "NewPanelDialog":
-                    content = File.ReadAllText(path + @"\Interfaces\PanelsPage\" + page + ".json");
-                    break;
-                case "DataProfilesPage":
-                case "GeneralSettingsPage":
-                case "DisplayFieldsPage":
-                    content = File.ReadAllText(path + @"\Interfaces\DataProfilesPage\" + page + ".json");
-                    break;
-                default:
-                    break;
-            }
+            string content = File.ReadAllText(path + @"\Interfaces\" + page + ".json");
+            //switch (page)
+            //{
+            //    case "LoginPage":
+            //        content = File.ReadAllText(path + @"\Interfaces\LoginPage.json");
+            //        break;
+            //    case "GeneralPage":
+            //    case "NewPageDialog":
+            //    case "EditPageDialog":
+            //    case "PanelConfigurationDialog":
+            //        content = File.ReadAllText(path + @"\Interfaces\GeneralPage\" + page + ".json");
+            //        break;
+            //    case "PanelsPage":
+            //    case "NewPanelDialog":
+            //        content = File.ReadAllText(path + @"\Interfaces\PanelsPage\" + page + ".json");
+            //        break;
+            //    case "DataProfilesPage":
+            //    case "GeneralSettingsPage":
+            //    case "DisplayFieldsPage":
+            //        content = File.ReadAllText(path + @"\Interfaces\DataProfilesPage\" + page + ".json");
+            //        break;
+            //    default:
+            //        break;
+            //}
 
             var result = JsonConvert.DeserializeObject<List<control>>(content);
             string[] control = new string[2];
@@ -102,7 +104,7 @@ namespace JoomlaSite.Common_Action
 
         public void WaitToPageLoad(string ElementToCheck)
         {
-            //new WebDriverWait(driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementExists((By.XPath(ElementToCheck))));
+            new WebDriverWait(driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementExists((By.XPath(ElementToCheck))));
         }
         #endregion
     }
