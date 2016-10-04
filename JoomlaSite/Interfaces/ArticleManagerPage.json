@@ -1,6 +1,5 @@
 ﻿[
   //Menu Buttons
-  [
     {
       "name": "new_btn",
       "type": "xpath",
@@ -20,10 +19,8 @@
       "name": "emptytrash_btn",
       "type": "xpath",
       "value": "//div[@id='toolbar-delete']/button"
-    }
-  ],
+    },
   //search_fucntion
-  [
     {
       "name": "search_btn",
       "type": "xpath",
@@ -103,10 +100,8 @@
       "name": "maxlevelvalue",
       "type": "xpath",
       "value": "//div[@id='filter_level_chzn']//li[contains(text(),'{0}')]"
-    }
-  ],
+    },
   //object to check
-  [
     {
       "name": "message",
       "type": "xpath",
@@ -116,10 +111,8 @@
       "name": "titletocheck",
       "type": "xpath",
       "value": "//a[contains(text(),'{0}')]"
-    }
-  ],
+    },
   //text box and check box
-  [
     {
       "name": "search_tbx",
       "type": "xpath",
@@ -130,5 +123,4 @@
       "type": "xpath",
       "value": "//*[@id='articleList']//th[@class='center']/input"
     }
-  ]
 ]

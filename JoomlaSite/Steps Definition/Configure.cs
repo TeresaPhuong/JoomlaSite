@@ -8,21 +8,17 @@ using JoomlaSite.Common_Action;
 
 namespace JoomlaSite.Steps_Definition
 {
-    class SetUp:Configure
+    [Binding]
+    class Configure: Common_Action.Configure
     {
-        [Given(@"I navigate to (.*)")]
-        public void NavigateTo(string url)
-        {
-            driver.Navigate().GoToUrl(url);
-            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
-        }
-        [BeforeFeature]
+        
+        [Before]
         public void precondition()
         {
             StartBrowser();
         }
 
-        [AfterFeature]
+        [After]
         public void postcondition()
         {
             driver.Quit();

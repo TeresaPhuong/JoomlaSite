@@ -11,15 +11,22 @@ namespace JoomlaSite.Steps_Definition
     [Binding]
     class LoginPageStep:LoginPage
     {
-        [When(@"I enter username (.*)")]
-        public void EnterUsername(string username)
+        [Given(@"I navigate to Joomlasite")]
+        public void NavigateTo()
         {
-            EnterIntoUsername(username);
+            string url = GetData("url");
+            driver.Navigate().GoToUrl(url);
+            driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
         }
-        [When(@"I enter password (.*)")]
-        public void EnterPassword(string password)
+        [When(@"I enter username")]
+        public void EnterUsername()
         {
-            EnterIntoPassword(password);
+            EnterIntoUsername();
+        }
+        [When(@"I enter password")]
+        public void EnterPassword()
+        {
+            EnterIntoPassword();
         }
         [When(@"I click Login button")]
         public void ClickLogin()
@@ -27,4 +34,5 @@ namespace JoomlaSite.Steps_Definition
             ClickLoginButton();
         }
     }
+
 }

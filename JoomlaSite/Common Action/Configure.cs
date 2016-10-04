@@ -17,6 +17,7 @@ namespace JoomlaSite.Common_Action
         public string BrowserValue()
         {
             string[] control = GetControlValue("browser");
+            Console.WriteLine(control[1]);
             return control[1];
         }
         public void StartBrowser()

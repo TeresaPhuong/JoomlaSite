@@ -30,47 +30,69 @@ namespace JoomlaSite.Common_Action
             public string type { get; set; }
             public string value { get; set; }
         }
-
         public string[] GetControlValue(string ControlName)
         {
             ControlName.ToLower();
             string page = GetClassCaller();
             string path = Directory.GetParent(System.Reflection.Assembly.GetExecutingAssembly().Location).FullName;
             path = path.Replace("\\bin\\Debug", "");
-            string content = File.ReadAllText(path + @"\Interfaces\" + page + ".json");
-            //switch (page)
-            //{
-            //    case "LoginPage":
-            //        content = File.ReadAllText(path + @"\Interfaces\LoginPage.json");
-            //        break;
-            //    case "GeneralPage":
-            //    case "NewPageDialog":
-            //    case "EditPageDialog":
-            //    case "PanelConfigurationDialog":
-            //        content = File.ReadAllText(path + @"\Interfaces\GeneralPage\" + page + ".json");
-            //        break;
-            //    case "PanelsPage":
-            //    case "NewPanelDialog":
-            //        content = File.ReadAllText(path + @"\Interfaces\PanelsPage\" + page + ".json");
-            //        break;
-            //    case "DataProfilesPage":
-            //    case "GeneralSettingsPage":
-            //    case "DisplayFieldsPage":
-            //        content = File.ReadAllText(path + @"\Interfaces\DataProfilesPage\" + page + ".json");
-            //        break;
-            //    default:
-            //        break;
-            //}
-
-            var result = JsonConvert.DeserializeObject<List<control>>(content);
-            string[] control = new string[2];
+            string content = string.Empty;
+            switch (ControlName)
+            {
+                case "browser":
+                    content = File.ReadAllText(path + @"\Configure.json");
+                    break;
+                case "AddArticlePage":
+                case "EditArticlePage":
+                    content = File.ReadAllText(path + @"\Interfaces\AddEditArticlePage.json");
+                    break;
+                default:
+                    content = File.ReadAllText(path + @"\Interfaces\" + page + ".json");
+                    break;
+            }
+            if (ControlName == "browser")
+            {
+                var result = JsonConvert.DeserializeObject<control>(content);
+                string[] control = new string[2];
+                control[0] = result.type;
+                control[1] = result.value;
+                return control;
+            }
+            else
+            {
+                var result = JsonConvert.DeserializeObject<List<control>>(content);
+                string[] control = new string[2];
+                foreach (var item in result)
+                {
+                    if (item.name.Equals(ControlName))
+                    {
+                        control[0] = item.type;
+                        control[1] = item.value;
+                        return control;
+                    }
+                }
+                return null;
+            }
+        }
+        public class datacontrol
+        {
+            public string dataname { get; set; }
+            public string datavalue { get; set; }
+        }
+        public string GetData(string nameofdata)
+        {
+            nameofdata.ToLower();
+            string path = Directory.GetParent(System.Reflection.Assembly.GetExecutingAssembly().Location).FullName;
+            path = path.Replace("\\bin\\Debug", "\\Data.json");
+            string content = string.Empty;
+            content = File.ReadAllText(path);
+            var result = JsonConvert.DeserializeObject<List<datacontrol>>(content);
             foreach (var item in result)
             {
-                if (item.name.Equals(ControlName))
+                if (item.dataname.Equals(nameofdata))
                 {
-                    control[0] = item.type;
-                    control[1] = item.value;
-                    return control;
+                    string value = item.datavalue;
+                    return value;
                 }
             }
             return null;
@@ -80,31 +102,56 @@ namespace JoomlaSite.Common_Action
         public IWebElement FindWebElement(string element)
         {
             string[] control = GetControlValue(element);
-            return driver.FindElement(By.XPath(control[1]));
+            switch (control[0])
+            {
+                case "id":
+                    return driver.FindElement(By.Id(control[1]));
+                case "classname":
+                    return driver.FindElement(By.ClassName(control[1]));
+                default:
+                    return driver.FindElement(By.XPath(control[1]));
+            }
         }
 
         public void ClickWebElement(string element)
         {
+            WaitToPageLoad(element);
             FindWebElement(element).Click();
         }
 
         public void TypeText(string element, string text)
         {
+            WaitToPageLoad(element);
             FindWebElement(element).Clear();
             FindWebElement(element).SendKeys(text);
         }
 
-        public void SelectDropdownList(string element,string field,string selectvalue)
+        public void SelectDropdownList(string element, string field, string selectvalue)
         {
+            WaitToPageLoad(element);
             FindWebElement(element).Click();
-            string[] control = GetControlValue(field + "value");
+            string[] control = GetControlValue(field + "_value");
             string value = string.Format(control[1], selectvalue);
-            FindWebElement(selectvalue).Click();
+            WaitToPageLoad(value);
+            FindWebElement(value).Click();
         }
 
         public void WaitToPageLoad(string ElementToCheck)
         {
-            new WebDriverWait(driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementExists((By.XPath(ElementToCheck))));
+            string[] control = GetControlValue(ElementToCheck);
+            switch (control[0])
+            {
+                case "id":
+                    new WebDriverWait(driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementExists((By.Id(control[1]))));
+                    break;
+                default:
+                    new WebDriverWait(driver, TimeSpan.FromSeconds(30)).Until(ExpectedConditions.ElementExists((By.XPath(control[1]))));
+                    break;
+            }
+        }
+        public void AcceptAlertPopup()
+        {
+            driver.SwitchTo().Alert().Accept();
         }
         #endregion
     }

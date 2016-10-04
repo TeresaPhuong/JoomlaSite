@@ -79,11 +79,14 @@
   <ItemGroup>
     <Compile Include="Common Action\Configure.cs" />
     <Compile Include="Common Action\Common.cs" />
+    <Compile Include="Page Objects\AddArticlePage.cs" />
+    <Compile Include="Page Objects\ArticleManagerPage.cs" />
     <Compile Include="Page Objects\HomePage.cs" />
     <Compile Include="Page Objects\LoginPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
+    <Compile Include="Steps Definition\ArticleManagerPageStep.cs" />
     <Compile Include="Steps Definition\LoginPageStep.cs" />
-    <Compile Include="Steps Definition\SetUp.cs" />
+    <Compile Include="Steps Definition\Configure.cs" />
     <Compile Include="Test Cases\ArticleFeature.feature.cs">
       <AutoGen>True</AutoGen>
       <DesignTime>True</DesignTime>
@@ -92,8 +95,10 @@
   </ItemGroup>
   <ItemGroup>
     <None Include="App.config" />
-    <None Include="configure.json" />
-    <None Include="Interfaces\AddNewArticlePage.json" />
+    <None Include="Configure.json" />
+    <None Include="Interfaces\AddEditArticlePage.json" />
+    <None Include="Interfaces\ArticleManagerPage.json" />
+    <None Include="Data.json" />
     <None Include="Interfaces\HomePage.json" />
     <None Include="Interfaces\LoginPage.json" />
     <None Include="packages.config" />
@@ -103,11 +108,6 @@
     </None>
   </ItemGroup>
   <ItemGroup />
-  <ItemGroup>
-    <Content Include="Interfaces\Configure.xml">
-      <SubType>Designer</SubType>
-    </Content>
-  </ItemGroup>
   <Choose>
     <When Condition="'$(VisualStudioVersion)' == '10.0' And '$(IsCodedUITest)' == 'True'">
       <ItemGroup>

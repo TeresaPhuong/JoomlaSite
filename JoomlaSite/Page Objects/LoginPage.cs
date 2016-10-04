@@ -9,13 +9,15 @@ namespace JoomlaSite.Page_Objects
 {
     class LoginPage:Common
     {
-        public void EnterIntoUsername(string username)
+        public void EnterIntoUsername()
         {
+            string username = GetData("username");
             TypeText("username_tbx", username);
         }
 
-        public void EnterIntoPassword(string password)
+        public void EnterIntoPassword()
         {
+            string password = GetData("password");
             TypeText("password_tbx", password);
         }
 
@@ -25,10 +27,10 @@ namespace JoomlaSite.Page_Objects
             return new HomePage();
         }
 
-        public HomePage Login(string username, string password)
+        public HomePage Login()
         {
-            EnterIntoUsername(username);
-            EnterIntoPassword(password);
+            EnterIntoUsername();
+            EnterIntoPassword();
             ClickLoginButton();
             return new HomePage();
         }

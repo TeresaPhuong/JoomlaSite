@@ -1,0 +1,104 @@
+﻿[ //Menu buttons
+  {
+    "name": "save_btn",
+    "type": "xpath",
+    "value": "//div[@id='toolbar-apply']/button"
+  },
+  {
+    "name": "saveclose_btn",
+    "type": "xpath",
+    "value": "//div[@id='toolbar-save']/button"
+  },
+  {
+    "name": "savenew_btn",
+    "type": "xpath'",
+    "value": "//div[@id='toolbar-save-new']/button"
+  },
+  {
+    "name": "saveascopy_btn",
+    "type": "xpath",
+    "value": "//div[@id='toolbar-save-copy']/button"
+  },
+  {
+    "name": "version_btn",
+    "type": "xpath",
+    "value": "//div[@id='toolbar-versions']/button"
+  },
+  {
+    "name": "cancel_btn",
+    "type": "xpath",
+    "value": "//div[@id='toolbar-cancel']/button"
+  },
+  {
+    "name": "close_btn",
+    "type": "xpath",
+    "value": "//div[@id='toolbar-cancel']/button"
+  },
+  {
+    "name": "help_btn",
+    "type": "xpath",
+    "value": "//div[@id='toolbar-help']/button"
+  },
+  //Text box
+  {
+    "name": "title_tbx",
+    "type": "xpath",
+    "value": "//input[@id='jform_title']"
+  },
+  {
+    "name": "alias_tbx",
+    "type": "xpath",
+    "value": "//input[@id='jform_title']"
+  },
+  //Content tab
+  {
+    "name": "content_frame",
+    "type": "id",
+    "value": "jform_articletext_ifr"
+  },
+  {
+    "name": "content_tbx",
+    "type": "xpath",
+    "value": "//*[@id='tinymce']"
+  },
+  {
+    "name": "status_btn",
+    "type": "xpath",
+    "value": "//div[@id='jform_state_chzn']/a"
+  },
+  {
+    "name": "status_value",
+    "type": "xpath",
+    "value": "//div[@id='jform_state_chzn']//li[contains(text(),'{0}')]"
+  },
+  {
+    "name": "category_btn",
+    "type": "xpath",
+    "value": "//div[@class='controls'][select[@id='jform_catid']]/div[@id='jform_catid_chzn']"
+  },
+  {
+    "name": "category_value",
+    "type": "xpath",
+    "value": "//div[@id='jform_catid_chzn']//li[contains(text(),'{0}')]"
+  },
+  {
+    "name": "featured_value"
+    "type": "xpath",
+    "value": "//div[fieldset[@id='jform_featured']]//label[contains(text(),'{0}')]"
+  },
+  {
+    "name": "access_btn",
+    "type": "xpath",
+    "value": "//div[@class='controls']/div[@id='jform_access_chzn']/a"
+  },
+  {
+    "name": "access_value",
+    "type": "xpath",
+    "value": "//div[@id='jform_access_chzn']//li[contains(text(),'{0}')]"
+  },
+  {
+    "name": "language",
+    "type": "xpath",
+    "value": "//div[@class='controls']/div[@id='jform_language_chzn']/a"
+  }
+]

@@ -1,0 +1,19 @@
+﻿[
+  {
+    "dataname": "url",
+    "datavalue": "http://192.168.189.119/abyssal/administrator/"
+  },
+  {
+    "dataname": "username",
+    "datavalue": "phuong.thi.tran"
+  },
+  {
+    "dataname": "password",
+    "datavalue": "123456"
+  },
+  //Message
+  {
+    "dataname": "add article success",
+    "datavalue": "Article successfully saved."
+  }
+]
