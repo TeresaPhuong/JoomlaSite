@@ -82,7 +82,7 @@
     "value": "//div[@id='jform_catid_chzn']//li[contains(text(),'{0}')]"
   },
   {
-    "name": "featured_value"
+    "name": "featured_value",
     "type": "xpath",
     "value": "//div[fieldset[@id='jform_featured']]//label[contains(text(),'{0}')]"
   },

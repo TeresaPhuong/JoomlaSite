@@ -77,6 +77,7 @@ namespace JoomlaSite.Page_Objects
             SelectDropdownList("searchcategory_btn", "category", categoryvalue);
         }
         #endregion
+
         #region Search
         public void SearchArticleTitle(string titletosearch)
         {
@@ -87,6 +88,27 @@ namespace JoomlaSite.Page_Objects
         {
             OpenSearchToolsSection();
             SelectStatusSearchValue(statusvalue);
+        }
+        #endregion
+
+        #region Verify Method
+        public bool IsArticleAddedMessageDisplay()
+        {
+            return CompareMessageContent("add article sucess", "message");
+        }
+        public bool IsArticleAddedSuccess()
+        {
+            string articletitel = GetData("articletitle");
+            string[] messagexpath = (GetControlValue("titletocheck"));
+            string titlexpath = string.Format(messagexpath[1], articletitel);
+            if (FindWebElement(titlexpath).Displayed == true)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         #endregion
 

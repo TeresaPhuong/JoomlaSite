@@ -1,15 +1,36 @@
 ﻿[
   {
     "dataname": "url",
-    "datavalue": "http://192.168.189.119/abyssal/administrator/"
+    "datavalue": "https://qatesting.joomla.com/administrator/"
   },
   {
     "dataname": "username",
-    "datavalue": "phuong.thi.tran"
+    "datavalue": "T516xkuT729s"
   },
   {
     "dataname": "password",
     "datavalue": "123456"
+  },
+  //Article data
+  {
+    "dataname": "articletitle",
+    "datavalue": "Automation Testing"
+  },
+  {
+    "dataname": "articlealias",
+    "datavalue": "autumation"
+  },
+  {
+    "dataname": "articlecontent",
+    "datavalue": "Your company expects more from you. It’s no longer just your team’s main role to find critical bugs before your customers do. They also have to confirm business success by ensuring a great user experience. For this to take place, your teams need to stay ahead of your competitors. With Agile development practices and aggressive time-boxed releases becoming standard, your SQA and test teams must adapt and cannot become the bottleneck."
+  },
+  {
+    "dataname": "categoryvalue",
+    "datavalue": "Image"
+  },
+  {
+    "dataname": "statusvalue",
+    "datavalue": "Published"
   },
   //Message
   {

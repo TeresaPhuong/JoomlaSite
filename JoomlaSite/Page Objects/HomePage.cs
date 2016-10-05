@@ -15,6 +15,10 @@ namespace JoomlaSite.Page_Objects
             ClickWebElement("Articles_btn");
             return new ArticleManagerPage();
         }
+        public void ClickNewArticleButton()
+        {
+            ClickWebElement("newarticle_btn");
+        }
         #endregion
     }
 }

@@ -8,7 +8,7 @@
     {
       "name": "edit_btn",
       "type": "xpath",
-      "value":
+      "value":"//div[@id='toolbar-edit']/button"
     },
     {
       "name": "trash_btn",

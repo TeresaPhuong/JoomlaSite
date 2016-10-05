@@ -12,6 +12,6 @@
   {
     "name": "login_btn",
     "type": "Xpath",
-    "value": "//div[@class='btn-group']/button"
+    "value": "//form[@id='form-login']//div[div[@class='btn-group']]//button"
   }
 ]

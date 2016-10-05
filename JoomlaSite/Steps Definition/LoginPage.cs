@@ -9,7 +9,7 @@ using JoomlaSite.Page_Objects;
 namespace JoomlaSite.Steps_Definition
 {
     [Binding]
-    class LoginPageStep:LoginPage
+    class LoginPage: Page_Objects.LoginPage
     {
         [Given(@"I navigate to Joomlasite")]
         public void NavigateTo()
@@ -18,20 +18,10 @@ namespace JoomlaSite.Steps_Definition
             driver.Navigate().GoToUrl(url);
             driver.Manage().Timeouts().ImplicitlyWait(TimeSpan.FromSeconds(30));
         }
-        [When(@"I enter username")]
-        public void EnterUsername()
+        [Given(@"I login with valid username and password")]
+        public void ILoginSuccess()
         {
-            EnterIntoUsername();
-        }
-        [When(@"I enter password")]
-        public void EnterPassword()
-        {
-            EnterIntoPassword();
-        }
-        [When(@"I click Login button")]
-        public void ClickLogin()
-        {
-            ClickLoginButton();
+            LoginSuccess();
         }
     }
 

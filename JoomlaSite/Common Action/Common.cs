@@ -30,16 +30,16 @@ namespace JoomlaSite.Common_Action
             public string type { get; set; }
             public string value { get; set; }
         }
-        public string[] GetControlValue(string ControlName)
+        public string[] GetControlValue(string controlname)
         {
-            ControlName.ToLower();
+            string ControlName = controlname.ToLower();
             string page = GetClassCaller();
             string path = Directory.GetParent(System.Reflection.Assembly.GetExecutingAssembly().Location).FullName;
             path = path.Replace("\\bin\\Debug", "");
             string content = string.Empty;
-            switch (ControlName)
+            switch (page)
             {
-                case "browser":
+                case "Configure":
                     content = File.ReadAllText(path + @"\Configure.json");
                     break;
                 case "AddArticlePage":
@@ -152,6 +152,18 @@ namespace JoomlaSite.Common_Action
         public void AcceptAlertPopup()
         {
             driver.SwitchTo().Alert().Accept();
+        }
+        public bool CompareMessageContent(string messagename, string element)
+        {
+            string message = GetData(messagename);
+            if(FindWebElement(element).Text == message)
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
         }
         #endregion
     }

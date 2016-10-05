@@ -84,8 +84,10 @@
     <Compile Include="Page Objects\HomePage.cs" />
     <Compile Include="Page Objects\LoginPage.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="Steps Definition\ArticleManagerPageStep.cs" />
-    <Compile Include="Steps Definition\LoginPageStep.cs" />
+    <Compile Include="Steps Definition\AddArticlePage.cs" />
+    <Compile Include="Steps Definition\ArticleManagerPage.cs" />
+    <Compile Include="Steps Definition\HomePage.cs" />
+    <Compile Include="Steps Definition\LoginPage.cs" />
     <Compile Include="Steps Definition\Configure.cs" />
     <Compile Include="Test Cases\ArticleFeature.feature.cs">
       <AutoGen>True</AutoGen>

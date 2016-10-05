@@ -34,5 +34,11 @@ namespace JoomlaSite.Page_Objects
             ClickLoginButton();
             return new HomePage();
         }
+        public void LoginSuccess()
+        {
+            EnterIntoUsername();
+            EnterIntoPassword();
+            ClickLoginButton();
+        }
     }
 }
